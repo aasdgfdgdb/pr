@@ -1,6 +1,7 @@
 /* Start Variables */
 :root {
-  --main-color: #10cab7;
+  --main-color: #526f37;
+  --second-color: #777;
   --background-color-section: #f6f6f6;
 }
 /* End Variables */
@@ -12,6 +13,15 @@
 body {
   direction: rtl;
   font-family: "Almarai", sans-serif;
+}
+::-webkit-scrollbar {
+  width: 13px;
+}
+::-webkit-scrollbar-button {
+  background-color: #777;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #526f37;
 }
 .container {
   padding-left: 15px;
@@ -33,6 +43,9 @@ body {
   .container {
     width: 1170px;
   }
+}
+.bold {
+  font-weight: bold;
 }
 /* End Global Rules */
 /* Start Header */
@@ -103,9 +116,9 @@ header ul li {
   position: relative;
 }
 @media (max-width: 767px) {
-  header ul li:nth-last-of-type(2){
+  header ul li:nth-last-of-type(2) {
     border-top: 1px solid white;
-    border-bottom: 1px solid white
+    border-bottom: 1px solid white;
   }
 }
 header ul li a {
@@ -120,7 +133,7 @@ header ul li a {
 }
 header ul li:hover a {
   color: white;
-  background-color: #777;
+  background-color: var(--second-color);
 }
 /* End Header */
 /* Start Landing */
@@ -162,15 +175,15 @@ header ul li:hover a {
   padding: 80px 0;
 }
 .articles h2 {
+  font-family: "Milan Display Swashes";
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
-  color: #777;
-  border: 1px solid #ddd;
+  color: #eee;
   padding: 15px;
-  border-radius: 5px;
-  font-size: 30px;
+  font-size: 80px;
+  font-weight: 900;
 }
 .articles .content {
   margin-top: 50px;
@@ -198,7 +211,7 @@ header ul li:hover a {
 }
 .articles article p {
   font-size: 14px;
-  color: #777;
+  color: var(--second-color);
   line-height: 1.8;
   text-align: justify;
 }
@@ -208,7 +221,7 @@ header ul li:hover a {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-right: 20px;
-  color: #777;
+  color: var(--second-color);
   display: flex;
   align-items: center;
   gap: 5px;
@@ -225,7 +238,7 @@ header ul li:hover a {
   animation: move 0.5s infinite;
 }
 .articles article a:hover {
-  color: #526f37;
+  color: var(--main-color);
 }
 .articles article a:hover i {
   opacity: 1;
@@ -242,12 +255,12 @@ header ul li:hover a {
 /* End Articles */
 /* Start Footer */
 footer {
-  background-color: #526f37;
+  background-color: var(--main-color);
 }
 footer .container {
   display: flex;
   align-items: center;
-  color: white;;
+  color: white;
   justify-content: space-between;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -258,6 +271,78 @@ footer .container div {
 }
 footer .container a {
   font-size: 25px;
-  color: white
+  color: white;
 }
 /* End Footer */
+/* Start Articles */
+.h-articles {
+  background-color: #526f37;
+  position: unset;
+}
+.article-1 {
+  padding: 0 10px;
+}
+.article-1 p {
+  font-size: 20px;
+  text-align: justify;
+  text-indent: 15px;
+  line-height: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.article-1 p .warning {
+  background-color: rgba(255, 0, 0, 0.055);
+  position: relative;
+  text-indent: 30px;
+  padding: 20px;
+  border-radius: 10px;
+}
+.article-1 p .warning::before {
+  content: "\f071";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  right: -10px;
+  position: absolute;
+  animation-name: warning;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+@keyframes warning {
+  0%,
+  100% {
+    color: transparent;
+  }
+  50% {
+    color: red;
+  }
+}
+.article-1 p .stethoscope {
+  position: relative;
+  text-indent: 30px;
+  background-color: #2195f322;
+  border-radius: 10px;
+  padding: 20px;
+}
+.article-1 p .stethoscope::before {
+  content: "\f0f1";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  right: -10px;
+  position: absolute;
+  animation-name: stethoscope;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  top: 15px;
+  color: #2195f3fa;
+}
+@keyframes stethoscope {
+  0%,
+  100% {
+    top: 15px;
+  }
+  50% {
+    top: 20px;
+  }
+}
+/* End Articles */
